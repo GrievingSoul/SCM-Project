@@ -1,0 +1,212 @@
+/* Analyzer Section (Right Block - formerly #app) */
+#app {
+  flex-grow: 1; /* Takes up remaining space */
+  background: #f4f4f9;
+  padding: 25px 40px 70px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(31, 28, 44, 0.4);
+  color: #1f1c2c;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 600px; /* Ensure it has a minimum height */
+}
+
+/* Adjust existing #app related styles for the new context */
+#app h1, #app h2 { text-align: center; user-select: none; color: #1f1c2c; }
+#app h1#app-main-title { margin-top: 0; margin-bottom: 25px; font-size: 2.2rem; } /* Specific for main title */
+#app h2 { margin-top: 20px; margin-bottom: 10px; } /* General h2 within #app (e.g. on blank page) */
+#app p { color: #333; font-size: 1em; line-height: 1.6; }
+
+/* textarea is styled by Member 2, but used heavily here */
+
+#app button.main-action-btn {
+  background-color: #6a85b6;
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  font-weight: 700;
+  align-self: center;
+}
+#app button.main-action-btn:hover { background-color: #50659e; }
+
+#results {
+  margin-top: 30px;
+  background: white;
+  padding: 30px 35px;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(106, 133, 182, 0.3);
+  color: #1f1c2c;
+  border: 3px solid #6a85b6;
+  max-width: 100%;
+  min-height: 150px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+/* Style for download link within results (M2 might create the link, M3 styles it) */
+#results .download-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #28a745; /* Green for download */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+#results .download-link:hover {
+    background-color: #218838;
+}
+
+#loading {
+  margin-top: 20px;
+  font-style: italic;
+  color: #6a85b6;
+  text-align: center;
+  font-weight: 600;
+  user-select: none;
+  display: flex; /* Changed to flex for better spinner alignment */
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between spinner and text */
+}
+#loading .spinner {
+  border: 4px solid #d6d6f7; /* Light part of spinner */
+  border-top: 4px solid #6a85b6; /* Dark part of spinner */
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  display: inline-block; /* Ensure it's an inline block if not already */
+}
+@keyframes spin { 0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);} }
+
+#next-page-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  background-color: #5cb85c; /* Green for next/proceed */
+  color: white;
+}
+#next-page-btn:hover { background-color: #4cae4c; transform: translateY(-1px); }
+
+#blank-page-placeholder {
+    color: #1f1c2c; /* Text color matching the app section */
+    padding: 10px 20px 20px 20px; /* Padding around content */
+    text-align: center; /* Center align placeholder text if any */
+    width: 100%; /* Take full width of #app */
+}
+#blank-page-placeholder p.info-text { /* Styles for informational paragraphs within blank page */
+    margin-bottom: 15px !important; /* Ensure spacing */
+    font-size: 14px !important; /* Slightly smaller for info */
+    color: #555 !important; /* Softer color for info text */
+}
+
+.matched-companies-list, .salary-results-list {
+    list-style-type: decimal;
+    list-style-position: inside;
+    padding-left: 0; /* Remove default padding */
+    margin: 15px auto 20px auto; /* Center the list */
+    max-width: 90%; /* Control width */
+    text-align: left; /* Align text to left */
+}
+ .matched-companies-list li, .salary-results-list li {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #333;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    background-color: #fdfdfd; /* Slight background for list items */
+    border-radius: 4px;
+}
+.matched-companies-list li:last-child, .salary-results-list li:last-child { border-bottom: none; }
+.salary-results-list li strong { color: #1f1c2c; } /* Emphasize company name */
+.matched-companies-list li strong { color: #1f1c2c; }
+
+/* Style for the company link */
+.company-link {
+    color: #6a85b6; /* Theme color for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+.company-link:hover {
+    text-decoration: underline;
+}
+
+.preferred-company-input {
+    display: block;
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Max width */
+    padding: 10px 12px;
+    margin: 10px auto; /* Center the input fields */
+    border: 1.5px solid #bdc3c7; /* Neutral border */
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333;
+}
+.preferred-company-input:focus {
+    border-color: #6a85b6; /* Theme color on focus */
+    box-shadow: 0 0 5px rgba(106, 133, 182, 0.5);
+    outline: none;
+}
+
+button.app-button { /* General purpose button for within app sections */
+    background-color: #5cb85c; /* Consistent green for actions */
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    display: block; /* Make it a block to use auto margins */
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+button.app-button:hover { background-color: #4a9d4a; }
+
+#salary-analysis-results {
+    text-align: left; /* Align text to left */
+    max-width: 90%; /* Control width */
+    margin: 25px auto; /* Center the results block */
+    padding: 20px;
+    background-color: #ffffff; /* White background for clarity */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+#salary-analysis-results h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #1f1c2c;
+    text-align: center;
+    font-size: 1.3em;
+}
+hr.section-divider { /* Shared with M2 or can be distinct if needed */
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(31, 28, 44, 0.25), rgba(0, 0, 0, 0));
+    margin: 30px 0; /* Spacing for divider */
+}
