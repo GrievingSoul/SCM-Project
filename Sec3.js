@@ -418,7 +418,7 @@ function handleSalaryAnalysis() {
   });
 
   if (!hasInput) {
-    salaryResultsHTML += "<li>Please enter at least one company name above to analyze.</li>";
+    salaryResultsHTML += "<li>Please Enter at least One Company Name Above to Analyze.</li>";
   }
   salaryResultsHTML += `</ul><p class='info-text' style='font-size:0.8em; text-align:center; margin-top:10px;'>Note: Salary data is illustrative, simulated for demonstration (May 2025). Experience level for this custom analysis is based on the last analyzed resume: <strong>${analysisForExpLevel.experienceLevel}</strong>. Results may vary. Links are simulated.</p>`;
   resultsContainer.innerHTML = salaryResultsHTML;
