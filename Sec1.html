@@ -1,21 +1,36 @@
 <section id="app">
     <h1 id="app-main-title">AI Resume Analyzer + Job Matcher</h1>
+
     <div id="input-area">
         <label for="resume-text">Paste your resume text here:</label>
-        <textarea id="resume-text" placeholder="Or paste your resume text here..." aria-label="Resume text input area" rows="15"></textarea>
+        <textarea id="resume-text"
+                  placeholder="Or paste your resume text here..."
+                  aria-label="Resume text input area"
+                  rows="15">
+        </textarea>
     </div>
-    <button id="analyze-btn" class="main-action-btn" aria-label="Analyze resume and match jobs">Analyze & Match Jobs</button>
-    <div id="loading" style="display:none;" aria-live="polite">
+
+    <button id="analyze-btn" class="main-action-btn" aria-label="Analyze resume and match jobs">
+        Analyze & Match Jobs
+    </button>
+
+    <div id="loading" style="display:none;" aria-live="polite" role="status">
         <div class="spinner"></div>
         <p>Processing your resume...</p>
     </div>
+
     <div id="error-message" style="display:none; color: red;" aria-live="assertive">
         </div>
+
     <div id="results-area" style="display:none;">
         <h2>Analysis Results & Job Matches:</h2>
         <pre id="results" aria-live="polite"></pre>
     </div>
-    <button id="next-page-btn" style="display:none;" aria-label="Go to next page for more details">Next Page</button>
+
+    <button id="next-page-btn" style="display:none;" aria-label="Go to next page for more details">
+        Next Page
+    </button>
+
     <div id="blank-page-placeholder" style="display:none;">
         </div>
 </section>
