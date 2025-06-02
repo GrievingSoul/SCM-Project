@@ -20,7 +20,7 @@ const AISimulator = (function() {
     ]
   };
 
-  const salaryRangesUSD = { // Base in thousands USD per year
+  const salaryRangesUSD = { 
     "Entry": { min: 50, max: 80, stdDev: 10 },
     "Junior": { min: 70, max: 100, stdDev: 12 },
     "Intermediate": { min: 90, max: 130, stdDev: 15 },
@@ -28,13 +28,12 @@ const AISimulator = (function() {
     "Lead/Staff": { min: 160, max: 250, stdDev: 25 }
   };
 
-  const companySalaryAdjustments = { // Multiplier for base range
+  const companySalaryAdjustments = { 
     "Google": 1.7, "Microsoft": 1.6, "Amazon": 1.65, "Apple": 1.8, "Meta": 1.75, "Netflix": 2.0, "Nvidia": 1.9,
     "OpenAI Labs": 2.1, "Salesforce": 1.5, "Adobe": 1.55,
     "IBM": 1.2, "Intel": 1.3,
     "Infosys": 0.8, "Wipro": 0.75, "Tech Mahindra": 0.85, "Tata Consultancy Services": 0.8, "HCL Technologies": 0.78,
     "Capgemini": 0.9, "Accenture": 1.0,
-    // Tier 3 companies will use base or slightly lower if not specified
   };
 
   function getSimulatedCompanyLink(companyName) {
@@ -424,3 +423,4 @@ function handleSalaryAnalysis() {
   salaryResultsHTML += `</ul><p class='info-text' style='font-size:0.8em; text-align:center; margin-top:10px;'>Note: Salary data is illustrative, simulated for demonstration (May 2025). Experience level for this custom analysis is based on the last analyzed resume: <strong>${analysisForExpLevel.experienceLevel}</strong>. Results may vary. Links are simulated.</p>`;
   resultsContainer.innerHTML = salaryResultsHTML;
 }
+
