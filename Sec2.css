@@ -13,7 +13,7 @@
   min-height: 600px; /* Ensure it has a minimum height */
 }
 
-/* Adjust existing #app related styles for the new context */
+/* Adjust existing #APP related styles for the New Context */
 #app h1, #app h2 { text-align: center; user-select: none; color: #1f1c2c; }
 #app h1#app-main-title { margin-top: 0; margin-bottom: 25px; font-size: 2.2rem; } /* Specific for main title */
 #app h2 { margin-top: 20px; margin-bottom: 10px; } /* General h2 within #app (e.g. on blank page) */
