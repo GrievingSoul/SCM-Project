@@ -1,20 +1,10 @@
 <section id="app">
     <h1 id="app-main-title">AI Resume Analyzer + Job Matcher</h1>
-<<<<<<< HEAD
-    <textarea id="resume-text" placeholder="Or paste your resume text here..." aria-label="Resume text input area"></textarea>
-    <button id="analyze-btn" class="main-action-btn" aria-label="Analyze resume and match jobs">Analyze and Match Jobs</button>
-    <div id="loading" style="display:none;" aria-live="polite">
-        <div class="spinner"></div> Processing your resume...
-=======
 
     <div id="input-area">
         <label for="resume-text">Paste your resume text here:</label>
-        <textarea id="resume-text"
-                  placeholder="Or paste your resume text here..."
-                  aria-label="Resume text input area"
-                  rows="15">
-        </textarea>
->>>>>>> fb34296ecd2840f7b80b64935d7dfd7c118a1597
+        <textarea id="resume-text" placeholder="Or paste your resume text here..."
+                  aria-label="Resume text input area" rows="15"></textarea>
     </div>
 
     <button id="analyze-btn" class="main-action-btn" aria-label="Analyze resume and match jobs">
@@ -27,17 +17,33 @@
     </div>
 
     <div id="error-message" style="display:none; color: red;" aria-live="assertive">
-        </div>
+        <p>An error occurred. Please try again.</p>
+    </div>
 
     <div id="results-area" style="display:none;">
         <h2>Analysis Results & Job Matches:</h2>
         <pre id="results" aria-live="polite"></pre>
+        
+        <label for="filter-results">Filter Results:</label>
+        <select id="filter-results">
+            <option value="all">All Matches</option>
+            <option value="best-fit">Best Fit</option>
+            <option value="recently-posted">Recently Posted</option>
+        </select>
     </div>
 
     <button id="next-page-btn" style="display:none;" aria-label="Go to next page for more details">
         Next Page
     </button>
 
-    <div id="blank-page-placeholder" style="display:none;">
-        </div>
+    <div id="user-feedback" style="display:none;">
+        <h2>Your Feedback</h2>
+        <textarea id="feedback-text" placeholder="Tell us about your experience..."
+                  aria-label="User feedback input area" rows="5"></textarea>
+        <button id="submit-feedback-btn">Submit Feedback</button>
+    </div>
+
+    <div id="blank-page-placeholder" style="display:none;"></div>
 </section>
+
+
