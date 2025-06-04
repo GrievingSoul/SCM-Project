@@ -5,6 +5,9 @@
         <label for="resume-text">Paste your resume text here:</label>
         <textarea id="resume-text" placeholder="Or paste your resume text here..."
                   aria-label="Resume text input area" rows="15"></textarea>
+
+        
+        <button id="voice-input-btn" aria-label="Speak your resume text">🎤 Speak Resume</button>
     </div>
 
     <button id="analyze-btn" class="main-action-btn" aria-label="Analyze resume and match jobs">
@@ -20,10 +23,15 @@
         <p>An error occurred. Please try again.</p>
     </div>
 
-    <div id="results-area" style="display:none;">
+    
+    <div id="success-message" style="display:none; color: green;" aria-live="polite">
+        <p>Resume successfully analyzed!</p>
+    </div>
+
+    <div id="results-area" style="display:none;" class="fade-in-animation"> <!-- ✅ Animation class added -->
         <h2>Analysis Results & Job Matches:</h2>
         <pre id="results" aria-live="polite"></pre>
-        
+
         <label for="filter-results">Filter Results:</label>
         <select id="filter-results">
             <option value="all">All Matches</option>
@@ -45,5 +53,4 @@
 
     <div id="blank-page-placeholder" style="display:none;"></div>
 </section>
-
 
