@@ -10,7 +10,13 @@
         <label for="resume-text">Paste your resume text here:</label>
         <textarea id="resume-text" placeholder="Paste your resume text here..."
                   aria-label="Resume text input area" rows="15"></textarea>
+Hem2
         <button id="clear-resume-btn" aria-label="Clear resume text" style="margin-top: 5px; display: block;">Clear Text</button>
+
+
+        
+        <button id="voice-input-btn" aria-label="Speak your resume text">🎤 Speak Resume</button>
+ main
     </div>
 
     <button id="analyze-btn" class="main-action-btn" aria-label="Analyze resume and match jobs" style="margin-top: 15px;">
@@ -26,7 +32,12 @@
         <p>An error occurred while processing your resume. Please check your input or try again later.</p>
     </div>
 
-    <div id="results-area" style="display:none;">
+    
+    <div id="success-message" style="display:none; color: green;" aria-live="polite">
+        <p>Resume successfully analyzed!</p>
+    </div>
+
+    <div id="results-area" style="display:none;" class="fade-in-animation"> <!-- ✅ Animation class added -->
         <h2>Analysis Results & Job Matches:</h2>
         <p id="results-description" style="font-style: italic; margin-bottom: 10px;">
             Below you will find the analysis of your resume and suitable job openings based on your skills and experience.
@@ -59,6 +70,7 @@
 
     <div id="blank-page-placeholder" style="display:none;"></div>
 
+ Hem2
     <script>
         // Small script for dynamic year in footer
         const currentYearSpan = document.getElementById('current-year');
@@ -79,3 +91,5 @@
         }
     </script>
 </section>
+
+

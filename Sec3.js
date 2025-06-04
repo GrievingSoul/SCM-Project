@@ -82,6 +82,7 @@ async function handleSalaryAnalysis() {
     }
   }
 }
+
 // Existing JavaScript code:
 // ... (function that calls showSalaryAnalysisPage) ...
 
@@ -251,3 +252,5 @@ async function handleSalaryAnalysis() {
 
 // Example call to set up the page (if needed for testing)
 // showSalaryAnalysisPage();
+
+
