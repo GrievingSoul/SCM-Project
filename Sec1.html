@@ -1,11 +1,95 @@
 <section id="app">
     <h1 id="app-main-title">AI Resume Analyzer + Job Matcher</h1>
-    <textarea id="resume-text" placeholder="Or paste your resume text here..." aria-label="Resume text input area"></textarea>
-    <button id="analyze-btn" class="main-action-btn" aria-label="Analyze resume and match jobs">Analyze & Match Jobs</button>
-    <div id="loading" style="display:none;" aria-live="polite">
-        <div class="spinner"></div> Processing your resume...
+
+    <div id="input-area">
+        <label for="resume-file">Upload your resume (PDF, DOC, DOCX):</label>
+        <input type="file" id="resume-file" accept=".pdf,.doc,.docx" aria-label="Resume file input" style="margin-bottom: 10px; display: block;">
+
+        <p style="text-align: center; margin: 10px 0; font-weight: bold;">OR</p>
+
+        <label for="resume-text">Paste your resume text here:</label>
+        <textarea id="resume-text" placeholder="Paste your resume text here..."
+                  aria-label="Resume text input area" rows="15"></textarea>
+Hem2
+        <button id="clear-resume-btn" aria-label="Clear resume text" style="margin-top: 5px; display: block;">Clear Text</button>
+
+
+        
+        <button id="voice-input-btn" aria-label="Speak your resume text">🎤 Speak Resume</button>
+ main
     </div>
-    <pre id="results" style="display:none;" aria-live="polite"></pre>
-    <button id="next-page-btn" style="display:none;" aria-label="Go to next page for more details">Next Page</button> <div id="blank-page-placeholder" style="display:none;">
-        </div>
+
+    <button id="analyze-btn" class="main-action-btn" aria-label="Analyze resume and match jobs" style="margin-top: 15px;">
+        Analyze & Match Jobs
+    </button>
+
+    <div id="loading" style="display:none;" aria-live="polite" role="status">
+        <div class="spinner"></div>
+        <p>Analyzing your skills and matching jobs, please wait...</p>
+    </div>
+
+    <div id="error-message" style="display:none; color: red;" aria-live="assertive">
+        <p>An error occurred while processing your resume. Please check your input or try again later.</p>
+    </div>
+
+    
+    <div id="success-message" style="display:none; color: green;" aria-live="polite">
+        <p>Resume successfully analyzed!</p>
+    </div>
+
+    <div id="results-area" style="display:none;" class="fade-in-animation"> <!-- ✅ Animation class added -->
+        <h2>Analysis Results & Job Matches:</h2>
+        <p id="results-description" style="font-style: italic; margin-bottom: 10px;">
+            Below you will find the analysis of your resume and suitable job openings based on your skills and experience.
+        </p>
+        <pre id="results" aria-live="polite"></pre>
+
+        <label for="filter-results">Filter Results:</label>
+        <select id="filter-results">
+            <option value="all">All Matches</option>
+            <option value="best-fit">Best Fit</option>
+            <option value="recently-posted">Recently Posted</option>
+        </select>
+    </div>
+
+    <button id="next-page-btn" style="display:none;" aria-label="Go to next page for more details">
+        Next Page
+    </button>
+
+    <div id="user-feedback" style="display:none;">
+        <h2>Your Feedback</h2>
+        <textarea id="feedback-text" placeholder="Tell us about your experience..."
+                  aria-label="User feedback input area" rows="5"></textarea>
+        <button id="submit-feedback-btn">Submit Feedback</button>
+    </div>
+
+    <footer style="text-align: center; margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee;">
+        <p>&copy; <span id="current-year"></span> AI Resume Analyzer + Job Matcher. All rights reserved.</p>
+        <p>For support, contact: support@exampleanalyzer.com</p>
+    </footer>
+
+    <div id="blank-page-placeholder" style="display:none;"></div>
+
+ Hem2
+    <script>
+        // Small script for dynamic year in footer
+        const currentYearSpan = document.getElementById('current-year');
+        if (currentYearSpan) {
+            currentYearSpan.textContent = new Date().getFullYear();
+        }
+
+        // Basic functionality for the clear button (optional, can be in a separate JS file)
+        const clearResumeBtn = document.getElementById('clear-resume-btn');
+        const resumeTextArea = document.getElementById('resume-text');
+        const resumeFileInput = document.getElementById('resume-file');
+
+        if (clearResumeBtn && resumeTextArea && resumeFileInput) {
+            clearResumeBtn.addEventListener('click', function() {
+                resumeTextArea.value = '';
+                resumeFileInput.value = ''; // Clears the selected file
+            });
+        }
+    </script>
 </section>
+
+

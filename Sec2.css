@@ -1,0 +1,124 @@
+/* Analyzer Section (Right Block - formerly #app) */
+#app {
+  flex-grow: 1; /* Takes up remaining space */
+  background: #f4f4f9;
+  padding: 25px 40px 70px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(31, 28, 44, 0.4);
+  color: #1f1c2c;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 600px; /* Ensure it has a minimum height */
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Adjust existing #APP related styles for the New Context */
+#app h1, #app h2 {
+  text-align: center;
+  user-select: none;
+  color: #1f1c2c;
+}
+#app h1#app-main-title {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 2.5rem; /* Slightly larger for emphasis */
+  font-weight: bold;
+}
+#app h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+/* General text */
+#app p {
+  color: #333;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Styled textarea */
+#resume-text {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #6a85b6;
+  min-height: 180px;
+  resize: vertical;
+}
+
+/* Buttons */
+#app button.main-action-btn {
+  background-color: #6a85b6;
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  font-weight: 700;
+  align-self: center;
+}
+#app button.main-action-btn:hover {
+  background-color: #50659e;
+}
+
+/* Results styling */
+#results {
+  margin-top: 30px;
+  background: white;
+  padding: 30px 35px;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(106, 133, 182, 0.3);
+  color: #1f1c2c;
+  border: 3px solid #6a85b6;
+  max-width: 100%;
+  min-height: 150px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Styled download link inside results */
+#results .download-link {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #50659e;
+  text-align: center;
+  margin-top: 15px;
+  text-decoration: none;
+}
+#results .download-link:hover {
+  color: #6a85b6;
+  text-decoration: underline;
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 600px) {
+  #app {
+    padding: 20px;
+  }
+  #app h1#app-main-title {
+    font-size: 2rem;
+  }
+  #app h2 {
+    font-size: 1.6rem;
+  }
+  #app button.main-action-btn {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+  #resume-text {
+    font-size: 14px;
+  }
+}
+
